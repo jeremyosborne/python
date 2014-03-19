@@ -1,6 +1,5 @@
 Requirements
 
-* Python 2.7.x
 * [pygame](http://pygame.org)
 
 To run, open the final folder and:

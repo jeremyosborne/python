@@ -1,6 +1,5 @@
 Requirements
 
-* Python 2.7.x
 * A working version of [tkinter](http://docs.python.org/2/library/tkinter.html)
 
 To run, open the final folder and:
