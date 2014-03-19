@@ -1,0 +1,6 @@
+* engine.py
+* gameobject.py
+* petri.py
+
+---+ Build and integrate the basic GameObject.
+     This will allow visualized clicks in the petri dish (game screen).

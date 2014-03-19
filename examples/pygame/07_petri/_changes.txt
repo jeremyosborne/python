@@ -1,0 +1,6 @@
+* blob.py
+* food.py
+* petri.py
+
+---+ Add the basic, motionless objects to the playing field by
+     subclassing out gameobject.

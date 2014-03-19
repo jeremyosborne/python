@@ -1,0 +1,7 @@
+* blob.py
+* food.py
+
+---+ Blobs can now eat, if the food is placed on top of them.
+     We are implementing collision detection.
+     To test this, add a blob to the game field (left click),
+     and add a piece of food on top of it (right click).

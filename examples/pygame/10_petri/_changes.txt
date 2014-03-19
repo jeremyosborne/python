@@ -1,0 +1,6 @@
+* blob.py
+* gameobject.py
+
+---+ Add closest food detection to the blobs.
+     Adding this chunk and the next chunk of code is basically
+     a math exercise.

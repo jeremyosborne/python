@@ -1,0 +1,13 @@
+* blob.py
+* engine.py
+* food.py
+
+---+ Add some utility functions and the update class.
+     Food can now provide nutrition.
+     Blobs can die.
+     The poor blobs can't go anywhere and eat yet (we'll fix that
+     next).
+
+As a note, both petri.py and engine.py are now done. They have done
+their jobs and we can do the rest of the work on the gameobject, blobs,
+and food.

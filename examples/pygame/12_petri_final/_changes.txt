@@ -1,0 +1,8 @@
+* blob.py
+* food.py
+* petri.py
+
+---+ Finishing touches
+    Added blob image in place of the surface.
+    Added food image in place of the surface.
+    Added music to the game engine.

@@ -1,0 +1,4 @@
+* engine.py
+
+---+ Catch the events. Interact with the game surface and see
+how clicking and key presses drop event objects out.
