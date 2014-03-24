@@ -1,0 +1,33 @@
+{% extends "notes/base.html" %}
+
+{% comment %}
+Display note cards if any notes exist in the database.
+
+By default, has the following context:
+
+* notes
+    * List of all Note models.
+{% endcomment %}
+{% block content %}
+{% if notes %}
+    <h2>{{ notes|length }} notes for you</h2>
+{% comment %} Condensed formatting for notes due to inline-block styling. {% endcomment %}
+{% for note in notes %}<div class="note">
+    <h2>{{ note.title }}</h2>
+    <p>
+        {{ note.body }}
+    </p>
+    <small>created {{ note.date }} by {{ note.author }}</small>
+</div>{% endfor %}
+{% else %}
+    <h2>No notes for you</h2>
+{% endif %}
+
+{% if user.is_authenticated %}
+    <a href="{% url 'auth_logout' %}">logout</a>
+    |
+    <a href="{% url 'add_note' %}">add a note</a>
+{% else %}
+    <a href="{% url 'auth_login' %}">login</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "notes/base.html" %}
+
+{% comment %}
+Allow logged in users to add notes.
+
+Context properties expected:
+
+* user: Should be provided by django.
+* form: provided by view.
+{% endcomment %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <h2>Add a note</h2>
+    <form action="{% url 'add_note' %}" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="add new note" />
+    </form>
+{% else %}
+    <h2>Only logged in users can add notes.</h2>
+{% endif %}
+{% endblock %}

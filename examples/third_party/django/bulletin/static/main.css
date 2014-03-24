@@ -1,0 +1,92 @@
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body > h1 {
+    padding: 1em;
+    background-color: #555;
+    text-align: right;
+    color: #eee;
+    margin: 0;
+}
+
+body > h1 > a, body > h1 > a:visited {
+    text-decoration: none;
+    color: #eee;    
+}
+body > h1 > a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    width: 80%;
+    margin: auto;
+}
+
+.content > h2 {
+    text-align: center;
+}
+
+.note {
+    display: inline-block;
+    vertical-align: top;
+    
+    width: 18%;
+
+    margin: 1%;
+    padding: 0.3em;
+    
+    overflow: auto;
+    border: 1px solid #aaa;
+}
+.note > h2 {
+    margin: 0;
+    
+    text-shadow: 1px 1px 0 #aaa;
+}
+.note > p {
+    min-height: 10em;
+    margin: 0;
+    color: #444;
+}
+.note > small {
+    display: block;
+    text-align: right;
+    padding: 0.2em;
+    color: #aaa;
+}
+
+
+
+@media screen and (max-width: 960px) {
+    .note {
+        width: 31%;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .content {
+        width: 88%;
+    }
+    .note {
+        width: 48%;
+    }
+}
+
+
+
+@media screen and (max-width: 550px) {
+    .content {
+        width: 96%;
+    }
+    .note {
+        width: 100%;
+    }
+}

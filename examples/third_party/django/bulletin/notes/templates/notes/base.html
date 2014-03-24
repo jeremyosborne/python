@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Bulletin</title>
+        {% block extra_head %}
+        {% endblock %}
+        
+        {% comment %} CHANGEME: Add styling {% endcomment %}
+        {% load staticfiles %}
+        <link href="{% static "main.css" %}" rel="stylesheet"/>
+    </head>
+    <body>
+        <h1><a href="{% url 'home' %}">Bulletin</a></h1>
+        <div class="content">
+            {% block content %}        
+            {% endblock %}
+        </div>
+    </body>
+</html>
