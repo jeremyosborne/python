@@ -1,0 +1,14 @@
+Host test1
+    HostName ec2-75-101-223-215.compute-1.amazonaws.com
+
+Host test2
+    HostName ec2-75-101-223-215.compute-1.amazonaws.com
+
+Host test3
+    HostName ec2-75-101-223-215.compute-1.amazonaws.com
+
+Host test4
+    HostName ec2-75-101-223-215.compute-1.amazonaws.com
+
+Host test5
+    HostName ec2-75-101-223-215.compute-1.amazonaws.com

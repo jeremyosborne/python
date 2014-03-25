@@ -1,0 +1,13 @@
+# This is an example of a fabricrc file.
+# Settings in this file map to the fabric env object when used with
+# the fab command.
+
+# whoami
+user=student1
+
+# List of hosts to run against.
+hosts=ec2-75-101-223-215.compute-1.amazonaws.com
+
+# Location of our keyfile.
+# NOTE: this is now relative to where our fab command is executed.
+key_filename=student
