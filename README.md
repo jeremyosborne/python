@@ -10,4 +10,4 @@ Examples may be excellent, but are as likely to be inane, superfluous, and wrong
 
 Officially all code is [MIT licensed](http://en.wikipedia.org/wiki/MIT_License).
 
-With that said, I don't care how you use this code. I'd be flattered if this code helps someone, anyone besides me.
+With that said, I don't care how you use this code. I'd be flattered if this code helps someone besides me.
