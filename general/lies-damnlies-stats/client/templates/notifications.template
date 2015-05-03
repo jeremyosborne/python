@@ -1,0 +1,15 @@
+<!--
+    Displays notifications on the page.
+    
+    We expect a Notification object within the content array of of the view.
+    We expect each Notification to have the following properties:
+    
+    classification -> converted to a class in the class string.
+        Assume values "info" and "error".
+    message -> the message content, displayed to the user.
+-->
+<ul class="notifications">
+    {{#each content}}
+        <li class="{{unbound classification}}">{{message}}</li>
+    {{/each}}
+</ul>

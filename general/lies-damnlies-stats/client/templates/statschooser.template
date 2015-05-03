@@ -1,0 +1,21 @@
+<!-- 
+    Give the user the ability to choose a particular stat to edit and view.
+    
+    View content object should contain:
+        availableStatsNames {String[]} Array of names for valid stat
+            collections.
+-->
+<div id="stats-chooser">
+    <form action="javascript:void(0);">
+        <label class="userinput">Available Stats</label>
+        <select class="userinput">
+            {{#each availableStatsNames}}
+            <option {{bindAttr value="this"}}>{{this}}</option>
+            {{/each}}
+        </select>
+        <button type="submit" 
+            class="userinput"
+            data-button-role="choose" 
+            tabindex="-1">Choose Stat</button>
+    </form>
+</div>

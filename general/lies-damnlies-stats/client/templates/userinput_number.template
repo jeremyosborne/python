@@ -1,0 +1,13 @@
+<!-- Basic view for a number input in a user input form. -->
+<span class="userinput-number">
+    <label class="userinput">{{label}}</label>
+    <input type="text" 
+        {{bindAttr value="number"}} 
+        {{bindAttr disabled="isDisabled"}}
+        class="number" 
+        patthen="[0-9]*"/>
+    <button type="button"
+        data-button-role="decrement"> </button>
+    <button type="button"
+        data-button-role="increment"> </button>
+</span>

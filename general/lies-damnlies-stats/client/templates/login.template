@@ -1,0 +1,35 @@
+<!--
+    Accept the required strings for user login.
+    
+    Note: Default attribute bindings are one way binding 
+    (view/controller -> template). Ember.js comes with a couple of "bound"
+    views, but this code is using the Ember.View to (1) set default values
+    and (2) on the submit to correctly extract the values from the form and
+    update the various object properties for use by the controller (e.g. update
+    values before submission).
+    
+    The class attribute must contain the same name as the bound attribute,
+    as this is (currently) used for retrieving the set values before a submit.
+-->
+<div id="login">
+    <form action="javascript:void(0);">
+        <label class="userinput">Username: </label>
+        <input type="text" 
+            {{bindAttr value="username"}} 
+            class="username"
+            autocorrect="off"
+            autocapitalize="none"
+            required="required" />
+        <br/>
+        <label class="userinput">Password: </label>
+        <input type="password"
+            {{bindAttr value="password"}} 
+            class="password"
+            required="required" />
+        <br/>
+        <button type="submit"
+            class="userinput"
+            data-button-role="login" 
+            tabindex="-1">Login</button>
+    </form>
+</div>

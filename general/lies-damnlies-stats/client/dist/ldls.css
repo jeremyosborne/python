@@ -1,0 +1,462 @@
+
+/* A modified css reset, originally obtained from ember.js starter kit. */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, var, b, i,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+table { 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+}
+
+
+button, input, select, textarea { 
+    margin: 0; 
+}
+input, select { 
+    vertical-align: middle; 
+}
+input:invalid, textarea:invalid { 
+    border-radius: 1px; 
+    box-shadow: 0px 0px 5px red; 
+}
+textarea { 
+    overflow: auto;
+}
+
+a, a:active, a:visited { 
+    color: #607890; 
+}
+a:link { 
+    -webkit-tap-highlight-color: #FF5E99; 
+}
+a:hover, a:active { 
+    outline: none;
+    color: #036;
+}
+
+
+/*********************************************************** ldls style below */
+
+/******************************************************************** General */
+body {
+    height: 100%;
+    width: 100%;
+    
+    /* Default font. */
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 2em;
+}
+
+/* No JavaScript, no application.
+   IE BUG: We style a div within the noscript to get around a styling bug
+   in IE that will show the noscript styled background if JS is enabled. */
+.noscript {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+
+    color: #fff;
+    font-size: 2em;
+    background-color: #a66919;
+}
+
+
+
+/******************************************************* Application sections */
+#app-header {
+    background-color: #999;
+    color: #eee;
+    text-align: right;
+    padding: 0.3em;
+}
+
+#app-footer {
+    text-align: center;
+}
+
+.footer-copyright {
+    color: #bbb;
+    font-size: 0.4em;
+}
+.footer-button {
+    width: 470px;
+    margin: 0 auto;
+    background-color: #ccc;
+    font-size: 0.6em;
+    padding: 0.2em;
+    /* To trigger clickability in iOS */
+    cursor: pointer;
+}
+
+
+/******************************************************************* AppCache */
+.appcache-reload {
+    position: fixed;
+    top: 5em; /* ~80px */
+    right: 0;
+    padding: 0.5em;
+    border-top: 0.3em solid #a60400;
+    border-left: 0.3em solid #a60400;
+    border-bottom: 0.3em solid #a60400;
+    border-radius: 1em 0 0 1em;
+    background-color: #bf3330;
+    
+    z-index: 1;
+}
+
+
+
+/************************************************************** Notifications */
+.notifications {
+    position: fixed;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    
+    padding: 0;
+    margin: 0;
+
+    list-style-type: none;
+    overflow: auto;
+
+    /* Need to bump stacking order higher. */
+    z-index: 1;
+}
+.notifications .info {
+    padding: 5px 10px;
+
+    background-color: #bfbf00;
+    color: black;
+    border-bottom: 1px solid #ccc;
+
+    font-size: 0.5em;
+}
+.notifications .error {
+    padding: 5px 10px;
+
+    background-color: #aa0000;
+    color: white;
+    border-bottom: 1px solid #ccc;
+
+    font-size: 0.5em;    
+}
+
+
+/************************************************** Generic User Input Fields */
+label.userinput {
+    display: block;
+    margin-top: 0.2em;
+    border-bottom: 1px solid #aaa;
+}
+
+.userinput-calendardate input {
+    font-size: 0.9em;
+    width: 3em;
+}
+.userinput-calendardate .month,
+.userinput-calendardate .day {
+    width: 1.5em;
+}
+
+
+.userinput-number input {
+    font-size: 0.9em;
+    width: 3em;
+}
+
+button.userinput {
+    display: block;
+    width: 80%;
+    min-width: 260px;
+
+    margin: 0.3em auto;
+    border-radius: 0.5em;
+    
+    font-size: 0.8em;
+    
+    -webkit-appearance: none;
+}
+
+button[data-button-role='increment'], button[data-button-role='decrement'] {
+    width: 2.5em;
+      
+    margin: 0 0 0 0.8em;
+    border-radius: 0.5em;  
+
+    font-size: 0.8em;
+
+    -webkit-appearance: none;
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 0.5em;
+}
+/* Increment and decrement images are stored in the raw folder. */
+button[data-button-role='increment'] {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAAZiS0dEAGgAaABoVaz0AQAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wHCxUSMmbHbS0AAAAidEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVAgb24gYSBNYWOHqHdDAAABQ0lEQVQ4y6WUrXeDQBDEZ17u7r1GNzo61ehGNxrNP9hodKNTjUc3OpFTcR8chQRK1gF7u7+duYWSMBUkBQCSOJVrMCPMagUQs4JThC/rdYYlXK83PkXorA2tAehJwtfNRpR8HdLXFHC5/HARobUmSJcPvZBwu90qVRjhaduW/yK0UbswLiRwhpCjhG+7nTwVAYUSRNLQX0uiaRrOIrTOYWkMCIuiEAhQgPIJCVDhAwh5VHyfz3xIaJ0LekXt0FVn7jWnCff79yR9PCOkN2NLDkA4fZ04Smitw/ha0BsxdGfgeiI8fBziTqTuDI/5P4Z3pq3rmj1C60zQKTvx93ACYtKSIET1CcuyHFxGhvTOG2UNo+NdvgQcj580ns52ycrKkSk5yTXxX2RVVeqcfOhpb9TeSmbemN7O3q2RC5CtJDsdY6Nfq9qT1fBhq/oAAAAASUVORK5CYII=");    
+}
+button[data-button-role='decrement'] {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAAZiS0dEAGgAaABoVaz0AQAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wHCxUUB2YuDogAAAAidEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVAgb24gYSBNYWOHqHdDAAABVklEQVQ4y62UK3fDMAyFP22WQXlxh4tX3NEVd38xpHjFGy7ucPGKi++A48TJ8ujZmUjih66uriQbIP7RQgiPIAMrtw1Mbah6idXhm6/11sIksVgskqsZJiX8Ao8crwgsJbzSbrebBQD3mIJJDVGZJdA++QGzQjeT0u9yudQ9Dp2NLAXwfb0aQMh33J2cdtYDtcvOf41oA9wbhgCr1ZPSxW4litoM2uVyaY5CeeDRa6c5iDEtegwB1uu1xhytLHTdCufzVydq6Pt6jKknaCWFJJ6sz1vTGmbbPG8khNlQymogT6fTrwthSBqPPppuQ3NkYgcZAmy3L73ZS+ORO+Dj82OwYmGsgLFkWTNSPb9TtR9lCLDbvaosQc74+H4cxQxTbeYe26oaDUP+yhDgbb+XrB21w+EwiRjmHkyP8d65AeBh7kJVVRajE92pqmoWM9zzrMfgd/KDHxvdgMqR//qkAAAAAElFTkSuQmCC");
+}
+
+select.userinput {
+    display: block;
+    width: 80%;
+    min-width: 260px;
+    
+    margin: 0.3em auto;
+    
+    font-size: 0.8em;
+    padding: 0.2em;
+
+    background: #fff;
+       
+    box-shadow: 1px 1px 1px #fff;
+
+    -webkit-appearance: none;
+}
+
+/****************************************************************** Login */
+/* Container, which must have some form non-static of positioning. */
+#login {
+    width: 50%;
+    min-width: 470px;
+    margin: 0 auto;
+
+    position: relative;
+}
+#login form {
+    box-shadow: 2px 2px 2px #ccc;    
+    padding: 1em;
+}
+
+/************************************************************* StatsChooser */
+/* Container, which must have some form non-static of positioning. */
+#stats-chooser {
+    width: 30%;
+    min-width: 470px;
+    margin: 0 auto;
+
+    position: relative;
+}
+#stats-chooser form {
+    box-shadow: 2px 2px 2px #ccc;    
+    padding: 1em;
+}
+
+
+/****************************************************************** StatEntry */
+/* Container, which must have some form non-static of positioning. */
+#stat-entry {
+    width: 30%;
+    min-width: 470px;
+    margin: 0 auto;
+
+    position: relative;
+}
+#stat-entry form {
+    border: 1px solid black;
+
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px #ccc;
+    
+    padding: 1em;
+}
+/* Displayed when the form has submitted something. */
+#stat-entry .stat-entry-submitting-message {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+}
+
+
+
+/****************************************************************** Summary */
+/* Container */
+.summary {
+    width: 470px;
+    margin: 0 auto;
+    
+    text-align: left;
+}
+.summary .header {
+    font-weight: normal;
+    margin-bottom: 0.2em;
+    background-color: #ddd;
+    /* To trigger clickability in iOS */
+    cursor: pointer;
+}
+.summary .header .disclosure:before {
+    /* Right facing triangle. */
+    content: "\25B6";
+    display: inline-block;
+    margin: 0 0.5em;
+    vertical-align: top;
+}
+.summary .header .disclosure.show-view:before {
+    /* Down facing triangle. */
+    content: "\25BC";
+    display: inline-block;
+    margin: 0 0.5em;
+    vertical-align: top;
+}
+.summary .display label input {
+    /* Selector mainly to deal with Ember.checkbox view. */
+    vertical-align: middle;
+}
+.summary table {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px #ccc;
+}
+.summary th, .summary td {
+    padding: 0.3em;
+    border: 1px solid black;
+}
+.summary th {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: #333;
+    
+    font-size: 0.9em;
+}
+.summary tr {
+    border-bottom: 1px solid black;
+}
+.summary .no-data {
+    font-size: 0.6em;
+    color: #aaa;
+}
+
+/*************************************************** WeeklySummary Specific */
+.weekly-summary .week-container {
+    /* Shrink the relative font a tiny bit. */
+    font-size: 0.8em;
+}
+/* tiger stripe */
+.weekly-summary .week-container:nth-child(odd) td {
+    background-color: #ddd;
+}
+
+
+/**************************************************** DailySummary Specific */
+.daily-summary table {
+    table-layout: fixed;
+}
+.daily-summary .day {
+    border: 1px solid black;
+    font-size: 0.5em;
+}
+.daily-summary .day .date {
+    color: #666;
+    font-size: 0.8em;
+    text-align: right;
+}
+/* Separate even months from odd months. */
+.daily-summary .day.even {
+    background-color: #ddd;
+}
+
+
+
+
+
+/**************************************** Device Size Dependent Modfications. */
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+
+/******************************************************************** General */
+body {
+    /* Shrink the base font-size just a bit. */
+   font-size: 1.5em;
+}
+
+/*************************************************************** UserInputs */
+/* User input controls. */
+.userinput-calendardate input {
+    font-size: 0.9em;
+    width: 2.2em;
+}
+.userinput-calendardate .month,
+.userinput-calendardate .day {
+    width: 1.2em;
+}
+
+.userinput-number input {
+    font-size: 0.9em;
+    width: 2em;
+}
+
+button[data-button-role='increment'], button[data-button-role='decrement'] {
+    /* Taller but thinner buttons. */
+    width: 2em;
+    height: 1.7em;
+
+    margin: 0 0 0 0.4em;
+    border-radius: 0.5em;
+
+    font-size: 0.8em;
+
+    -webkit-appearance: none;
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 0.5em;
+}
+
+/****************************************************************** Login */
+/* Container, which must have some form non-static of positioning. */
+#login {
+    width: 100%;
+    min-width: 0px;
+}
+
+/****************************************************************** Login */
+/* Container, which must have some form non-static of positioning. */
+#stats-chooser {
+    width: 100%;
+    min-width: 0px;
+}
+
+/**************************************************************** StatEntry */
+/* Modify the form, via the labels, into a label-on-top layout. */
+#stat-entry {
+    width: 100%;
+    min-width: 0px;
+}
+
+/****************************************************************** Summary */
+.summary {
+    width: 100%;
+}
+
+/******************************************************************* Page */
+.footer-button {
+    width: 100%;
+}
+
+} 
+/* end Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */

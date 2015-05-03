@@ -1,0 +1,30 @@
+<!--
+    Displays the summary of statistics.    
+-->    
+<div class="summary">
+    <h1 class="header" data-button-role="toggle-view"><span class="disclosure" {{bindAttr class="showView"}}></span>Complete Summary</h1>
+{{#if showView}}
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="2">Totals</th>
+            </tr>
+            {{#each content.totals}}
+            <tr>
+                <td>{{this.field}}</td>
+                <td>{{this.value}}</td>
+            </tr>
+            {{/each}}
+            <tr>
+                <th colspan="2">Averages (per day)</th>
+            </tr>
+            {{#each content.averages}}
+            <tr>
+                <td>{{this.field}}</td>
+                <td>{{oneDecimalDigit this.value}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{/if}}
+</div>

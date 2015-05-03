@@ -1,0 +1,40 @@
+<!-- 
+    A summary of statistics by week.
+    - Use CSS3 to tiger stripe the data.
+    - We expect the data to show information for all weeks. Weeks that don't
+      have any information internally to summarize should still be displayed
+      in this list, or else the controller needs to not include them. In other
+      words, all objects are expected to be weekly summary objects.
+    - Generic weekly view content object should contain:
+        from {Date} - First day of week.
+        to {Date} - Last day of week.
+        mappedSummary {Object[]} - Field and values mapped to objects in
+          an array.
+-->
+<div class="weekly-summary summary">
+    <h1 class="header" data-button-role="toggle-view"><span class="disclosure" {{bindAttr class="showView"}}></span>Weekly Summary</h1>
+    {{#if showView}}
+    <table>
+        <tr>
+            <th>From</th><th>To</th><th>Summary</th>
+        </tr>
+        {{#each content}}
+        <tr class="week-container">
+            <td>{{dateYear from}}/{{dateMonth from}}/{{dateDay from}}</td>
+            <td>{{dateYear to}}/{{dateMonth to}}/{{dateDay to}}</td>
+            <td>
+                {{#if mappedSummary.length}}
+                    <div class="stat">
+                        {{#each mappedSummary}}
+                            {{value}} {{field}}<br/>
+                        {{/each}}
+                    </div>
+                {{else}}
+                    <span class="no-data">No Data</span>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+    {{/if}}
+</div>

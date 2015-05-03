@@ -1,0 +1,9 @@
+<!--
+    Display a reload button on the page when the application cache has been
+    updated. Makes refreshing within a web application easier (when a refresh
+    button might not be immediately available).
+    
+    The only reason this element has an onclick handler is so that the
+    window.location.reload() call is respected on iOS.
+-->
+<div class="appcache-reload" onclick="window.location.reload();">Reload Application</div>

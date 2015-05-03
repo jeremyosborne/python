@@ -1,0 +1,13 @@
+CACHE MANIFEST
+# build: 1344140246699
+
+CACHE:
+ldls.css
+ldls.js
+img/touch-icon-57x57.png
+img/touch-icon-72x72.png
+img/touch-icon-114x114.png
+
+NETWORK:
+/api/
+

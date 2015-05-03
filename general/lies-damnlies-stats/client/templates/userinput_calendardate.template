@@ -1,0 +1,26 @@
+<!-- Basic view for a date input in a user input form. -->
+<span class="userinput-calendardate">
+    <label class="userinput">{{label}}</label>
+    <input type="text" 
+        {{bindAttr value="year"}} 
+        {{bindAttr disabled="isDisabled"}}
+        class="year" 
+        pattern="[0-9]{4}" 
+        placeholder="YYYY"/>
+    <input type="text" 
+        {{bindAttr value="month"}} 
+        {{bindAttr disabled="isDisabled"}}
+        class="month" 
+        patthen="[0-9]*" 
+        placeholder="MM"/>
+    <input type="text" 
+        {{bindAttr value="day"}} 
+        {{bindAttr disabled="isDisabled"}}
+        class="day"
+        pattern="[0-9]*" 
+        placeholder="DD"/>
+    <button type="button"
+        data-button-role="decrement"> </button>
+    <button type="button"
+        data-button-role="increment"> </button>
+</span>

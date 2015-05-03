@@ -1,0 +1,39 @@
+<!-- 
+    The calendar view expects an array of Weekly summary objects that act as
+    containers (e.g. have a content property) that consists of an array of
+    daily summary objects, each with their own content that includes a date
+    and a set of field:value pairs for the stats tracked during that
+    particular day.
+-->
+<div class="daily-summary summary">
+    <h1 class="header" data-button-role="toggle-view"><span class="disclosure" {{bindAttr class="showView"}}></span>Daily Summary</h1>
+{{#if showView}}
+    <table>
+        <tr>
+            <th>S</th>
+            <th>M</th>
+            <th>T</th>
+            <th>W</th>
+            <th>T</th>
+            <th>F</th>
+            <th>S</th>
+        </tr>
+        {{#each content}}
+        <tr>
+            {{#each days}}
+            <td class="day {{isEvenMonth date even odd}}">
+                <div class="date">{{dateMonth date}}/{{dateDay date}}</div>
+                {{#if content.length}}
+                    <div class="stat">
+                        {{#each content}}
+                            {{value}} {{field}}<br/>
+                        {{/each}}
+                    </div>
+                {{/if}}
+            </td>
+            {{/each}}
+        </tr>
+        {{/each}}
+    </table>
+{{/if}}
+</div>

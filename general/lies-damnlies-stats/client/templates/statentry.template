@@ -1,0 +1,28 @@
+<!--
+    Allows user input. Assumes JavaScript is turned on and working.
+    
+    Note: Default attribute bindings are one way binding 
+    (view/controller -> template). Ember.js comes with a couple of "bound"
+    views, but this code is using the Ember.View to (1) set default values
+    and (2) on the submit to correctly extract the values from the form and
+    update the various object properties for use by the controller (e.g. update
+    values before submission).
+    
+    The class attribute must contain the same name as the bound attribute,
+    as this is (currently) used for retrieving the set values before a submit.
+-->
+<div id="stat-entry">
+    <form action="javascript:void(0);">
+        <div id="stat-entry-user-input"></div>
+        <button type="submit" 
+            class="userinput"
+            {{bindAttr disabled="isDisabled"}} 
+            data-button-role="save" 
+            tabindex="-1">Save Stat</button>
+        <button type="submit"
+            class="userinput" 
+            {{bindAttr disabled="isDisabled"}}
+            data-button-role="delete" 
+            tabindex="-1">Delete Stat</button>
+    </form>
+</div>

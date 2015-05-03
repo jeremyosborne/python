@@ -1,0 +1,7 @@
+<!-- Template for the copyright that should appear in the footer.
+-->
+<button type="button"
+    class="userinput"
+    data-state-change="statsChooser" 
+    tabindex="-1">Other Stats</button>
+<small class="footer-copyright">&copy; 2012 lies, damn lies, and statistics</small>
