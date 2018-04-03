@@ -95,3 +95,9 @@ print("The best score withour gs_clf tuned classifier is:", gs_clf.best_score_)
 print("The tuned parameters used to achieve this score are:")
 for param_name in sorted(gs_clf_parameters.keys()):
     print("%s: %r" % (param_name, gs_clf.best_params_[param_name]))
+
+print("")
+print("Detailed results:\n", gs_clf.cv_results_)
+print("""TODO: This should be importable (easily according to docs) to a pandas DataFrame.
+TODO: As a n00b user, I'm not sure why I should do this, so figure out why I should do this and what I'm going to use the DataFrame for.
+""")
