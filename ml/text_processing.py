@@ -4,8 +4,10 @@ from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.linear_model import SGDClassifier
+from sklearn.model_selection import GridSearchCV
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
+import time
 
 # Limiting data to 4 newsgroup categories.
 categories = ['alt.atheism', 'soc.religion.christian',
@@ -69,3 +71,27 @@ print("Updated accuracy", np.mean(predicted == twenty_test.target))
 print("Get some metrics")
 print("Classification report\n", metrics.classification_report(twenty_test.target, predicted, target_names=twenty_test.target_names))
 print("Confusion matrix\n", metrics.confusion_matrix(twenty_test.target, predicted))
+
+print("Make our classifier better by trying different parameters within a range of posibilities.")
+grid_search_start_time = time.monotonic()
+gs_clf_parameters = {
+    # Rubber duck: a brief scan of the docs doesn't seem to use this string notation in any of the examples,
+    # but I assume the double underbar has special meaning as a separator between pipeline dictionary and
+    # labeled parameter that can be tweaked in the text_clf pipeline, e.g. 'vect__ngram_range' means
+    # try out vect with ngram_range paramteres between the values of (1, 1) and (1, 2).
+    'vect__ngram_range': [(1, 1), (1, 2)],
+    'tfidf__use_idf': (True, False),
+    'clf__alpha': (1e-2, 1e-3),
+}
+gs_clf = GridSearchCV(text_clf, gs_clf_parameters, n_jobs=-1)
+print("Classifying with a smaller subset of data because this example is made for learn by procedure.")
+gs_clf = gs_clf.fit(twenty_train.data[:400], twenty_train.target[:400])
+print("The tuned classifier can now predict. Tuning took %f seconds." % (time.monotonic() - grid_search_start_time))
+predicted_target_name_index = gs_clf.predict(['God is love'])[0]
+print("We predict 'God is love' to belong to group: '%s'" % twenty_train.target_names[predicted_target_name_index])
+
+print("")
+print("The best score withour gs_clf tuned classifier is:", gs_clf.best_score_)
+print("The tuned parameters used to achieve this score are:")
+for param_name in sorted(gs_clf_parameters.keys()):
+    print("%s: %r" % (param_name, gs_clf.best_params_[param_name]))
