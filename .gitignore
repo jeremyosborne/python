@@ -4,3 +4,4 @@ tmp
 *.pyc
 node_modules
 *.db3
+.pyk
