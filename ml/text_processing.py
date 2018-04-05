@@ -1,4 +1,6 @@
+import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from sklearn import metrics
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.text import CountVectorizer
@@ -84,20 +86,19 @@ gs_clf_parameters = {
     'clf__alpha': (1e-2, 1e-3),
 }
 gs_clf = GridSearchCV(text_clf, gs_clf_parameters, n_jobs=-1)
-print("Classifying with a smaller subset of data because this example is made for learn by procedure.")
+print("Classifying with a smaller subset of data because this is just an example and we don't want to wait.")
 gs_clf = gs_clf.fit(twenty_train.data[:400], twenty_train.target[:400])
 print("The tuned classifier can now predict. Tuning took %f seconds." % (time.monotonic() - grid_search_start_time))
 predicted_target_name_index = gs_clf.predict(['God is love'])[0]
-print("We predict 'God is love' to belong to group: '%s'" % twenty_train.target_names[predicted_target_name_index])
+print("We predict 'God is love' belongs to news group: '%s'" % twenty_train.target_names[predicted_target_name_index])
 
 print("")
-print("The best score withour gs_clf tuned classifier is:", gs_clf.best_score_)
+print("The best score tuned classifier is:", gs_clf.best_score_)
 print("The tuned parameters used to achieve this score are:")
 for param_name in sorted(gs_clf_parameters.keys()):
     print("%s: %r" % (param_name, gs_clf.best_params_[param_name]))
 
 print("")
-print("Detailed results:\n", gs_clf.cv_results_)
-print("""TODO: This should be importable (easily according to docs) to a pandas DataFrame.
-TODO: As a n00b user, I'm not sure why I should do this, so figure out why I should do this and what I'm going to use the DataFrame for.
-""")
+# print("Detailed results:\n", gs_clf.cv_results_)
+for k, v in gs_clf.cv_results_.items():
+    print(k, ':\n', v)
