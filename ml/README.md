@@ -34,7 +34,7 @@ apm install platformio-ide-terminal
 
 ```bash
 # cd to my src dump directory
-# I forget how soon after I installed the others beyond scikit-learn, but I did relatively quickly
+# I forget how soon after I installed the others beyond scikit-learn, but these were all installed
 pipenv install numpy scipy scikit-learn matplotlib pandas jupyter
 
 # Note: ran into a long dependency building issue that seems to be known with pipenv but doesn't happen to everyone.
@@ -51,3 +51,7 @@ pipenv install numpy scipy scikit-learn matplotlib pandas jupyter
 * Digression: Jupyter + IPython:
     * [Jupyter Notebook Tutorial: The Definitive Guide](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook)
     * [Jupyter + IPython docs](http://ipython.readthedocs.io/en/stable/interactive/index.html)
+    * [Interactive Dashboards](https://blog.dominodatalab.com/interactive-dashboards-in-jupyter/)
+    * [Jupyter widgets](http://ipywidgets.readthedocs.io/)
+
+
