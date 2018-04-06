@@ -51,4 +51,15 @@ df = pd.DataFrame({
     # data, all additional data will need to be 4 rows, or be a constant.
     # 'G': [1, 2, 3, 4, 5]
 })
-print(df)
+print("df:\n", df)
+print("df.index (row labels):\n%s" % df.index)
+print("df.columns (column labels):\n%s" % df.columns)
+print("df.values (data in array as array of arrays):\n%s" % df.values)
+
+print("df.describe():\n%s" % df.describe())
+
+print("Transpose the view of data with df.T:\n%s" % df.T)
+
+print("Sort by values in column B with df.sort_values(by='E', ascending=False):\n%s" % df.sort_values(by='E', ascending=False))
+
+print("All data in column E with df['E']:\n%s" % df['E'])
