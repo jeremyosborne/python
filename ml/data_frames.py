@@ -63,3 +63,25 @@ print("Transpose the view of data with df.T:\n%s" % df.T)
 print("Sort by values in column B with df.sort_values(by='E', ascending=False):\n%s" % df.sort_values(by='E', ascending=False))
 
 print("All data in column E with df['E']:\n%s" % df['E'])
+
+print("Get rows 1-4 with df[0:3]:\n%s" % df[0:3])
+
+print("Return all rows limited to columns E and F (note index not function call) with df.loc[:,['E','F']]:\n%s" % df.loc[:, ['E', 'F']])
+
+print("Get numeric index / coordinate positions with df.iloc[[0, 1, 3], [0, 2]]:\n%s" % df.iloc[[0, 1, 3], [0, 2]])
+
+print("Operations")
+
+print("mean average on columns where mean can be calculated:\n%s" % df.mean())
+
+print("mean average 'on other axis [sic]' with df.mean(1):\n%s" % df.mean(1))
+
+print("Work with individual series and find count of values with df['E'].value_counts():\n%s" % df['E'].value_counts())
+
+print("Group then sum by category with df.groupby('E').sum():\n%s" % df.groupby('E').sum())
+
+print("Plot a series with associated matplotlib with df['C'].cumsum().plot() and a call to plt.show().")
+df['C'].cumsum().plot()
+plt.show()  # This is blocking...
+
+print("And can serialize to formats CSV, excel, and others (see docs)")

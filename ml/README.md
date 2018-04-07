@@ -53,5 +53,3 @@ pipenv install numpy scipy scikit-learn matplotlib pandas jupyter
     * [Jupyter + IPython docs](http://ipython.readthedocs.io/en/stable/interactive/index.html)
     * [Interactive Dashboards](https://blog.dominodatalab.com/interactive-dashboards-in-jupyter/)
     * [Jupyter widgets](http://ipywidgets.readthedocs.io/)
-
-
