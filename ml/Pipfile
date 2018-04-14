@@ -13,6 +13,7 @@ pandas = "*"
 sympy = "*"
 nose = "*"
 scikit-learn = "*"
+lxml = "*"
 
 [dev-packages]
 
